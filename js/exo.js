@@ -1,7 +1,7 @@
 // Exo.js is a simple js library for easy form valiadtion
 // its Open source
-// created bt Obiabo Immanuel 
-// to solve the problem of form validation in both big and small scale app
+// created by Obiabo Immanuel 
+// to solve  problem of form validation in both big and small scale app
 // created 10 Dec 2020
 
 //now start script
@@ -23,7 +23,7 @@ const Exo=()=>{
     //now set listener for each of them
     mail.addEventListener('keyup', e => {
         let val=e.target.value;
-        const regex=/^[a-zA-Z0-9]+@gmail\.com/
+        const regex=^(\w+)+\@(\w+)+\.(\w+){2,10}/ig ;
             //test if the email matches the reg ex pattern 
             if (val.match(regex)) {
                 mailErr.style.color='green';
