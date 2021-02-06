@@ -1,10 +1,11 @@
 // Exo.js is a simple js library for easy form valiadtion
 // its Open source
 // created by Obiabo Immanuel 
-// to solve  problem of form validation in both big and small scale app
+// to solve the problems of form validation in both big and small scale app
 // created 10 Dec 2020
 
 //now start script
+
 console.warn('Exo.js has been linked successfully')
 const Exo=()=>{
     let {name ,  mail , password , site}={
@@ -23,7 +24,7 @@ const Exo=()=>{
     //now set listener for each of them
     mail.addEventListener('keyup', e => {
         let val=e.target.value;
-        const regex=^(\w+)+\@(\w+)+\.(\w+){2,10}/ig ;
+        const regex=/^(\w+)+\@(\w+)+\.(\w+){2,}/ig ;
             //test if the email matches the reg ex pattern 
             if (val.match(regex)) {
                 mailErr.style.color='green';
@@ -41,6 +42,7 @@ const Exo=()=>{
             
     })
     //now validate the password field 
+
     name.addEventListener('keyup', e => {
         let val=e.target.value;
          const pattern=/^[a-zA-Z0-9]+$/
@@ -62,7 +64,7 @@ const Exo=()=>{
     //now check for password fielf
     password.addEventListener('keyup', e => {
         const val=e.target.value;
-        const pattern=/[0-9a-zA-Z]{6}/
+        const pattern=/^[0-9a-zA-Z]+\w{6,}$/
          //check if password is not upto 8 characters
             if (val.match(pattern)) {
                 pswrdErr.style.color='rgb(224, 184, 3)'
@@ -87,8 +89,8 @@ const Exo=()=>{
     //mach for site 
     site.addEventListener('keyup', e => {
         const val=e.target.value;
-        const pattern=/^www\.[a-zA-Z0-9]+\.com$/
-        //test if it matches the www.siteUrl.com
+        const pattern=/^(https?:\/\/)?(\w)+?\.[a-zA-Z0-9]+\.\w+$/gi
+        //test if it matches the http://www.siteUrl.com 
             if(val.match(pattern)){
                 siteErr.style.color='green'
                 siteErr.textContent=' valid URl '
